@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-export const reactHookScrollTo = ({ x = 0, y = 0, id, option = "auto" }) => {
+export const ScrollTo = ({ x = 0, y = 0, id, option = "auto" }) => {
   if (
     typeof x !== "number" ||
     typeof y !== "number" ||
