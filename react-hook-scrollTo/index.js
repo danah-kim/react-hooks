@@ -1,0 +1,1 @@
+export { react-hook-scrollTo as default } from "./react-hook-scrollTo";
