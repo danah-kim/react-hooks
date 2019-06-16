@@ -1,0 +1,22 @@
+{
+  "name": "@danah/react-hook-daum-map",
+  "version": "1.0.0",
+  "description": "React Hook to makes funtional react for daum map easy.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sweetmilkys/react-hooks/tree/master/react-hook-daumMap"
+  },
+  "keywords": [
+    "react",
+    "react hooks",
+    "hooks",
+    "react daum map",
+    "daum map"
+  ],
+  "author": "danah.kim <sweetmilky.dev@gmail.com>",
+  "license": "MIT"
+}
