@@ -1,6 +1,6 @@
-import { useEffect } from "react";
+import { useEffect } from "./node_modules/react";
 
-export const ScrollTo = ({ x = 0, y = 0, id, option = "auto" }) => {
+export const scrollTo = ({ x = 0, y = 0, id, option = "auto" }) => {
   if (
     typeof x !== "number" ||
     typeof y !== "number" ||

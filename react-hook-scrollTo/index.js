@@ -1,1 +1,1 @@
-export { ScrollTo as default } from "./react-hook-scrollTo";
+export { scrollTo as default } from "./react-hook-scrollTo";
