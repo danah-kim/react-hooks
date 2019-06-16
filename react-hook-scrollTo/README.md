@@ -1,4 +1,4 @@
-# react-hook-scrollTo
+# @danah/react-hook-scrollto
 
 React Hook to makes scrolling the document to the specified coordinates easy.
 
@@ -6,17 +6,17 @@ React Hook to makes scrolling the document to the specified coordinates easy.
 
 #### - yarn
 
-`yarn add react-hook-scrollTo`
+`yarn add react-hook-scrollto`
 
 #### - npm
 
-`npm i react-hook-scrollTo`
+`npm i react-hook-scrollto`
 
 ## Usage
 
 ```js
 import React from "react";
-import scrollTo from "react-hook-scrollTo";
+import scrollTo from "@danah/react-hook-scrollto";
 
 function App() {
   scrollTo({
