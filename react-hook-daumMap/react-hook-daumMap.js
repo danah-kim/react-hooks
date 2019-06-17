@@ -65,7 +65,7 @@ export const daumMap = ({ apiKey, name = " ", lng, lat }) => {
       kakaoMapRoot.id = "kakao-map";
       document.body.appendChild(kakaoMapRoot);
     }
-  }, [apiKey, lat, lng, name]);
+  }, []);
 
   return <Map id="kakao-map" />;
 };
