@@ -1,4 +1,4 @@
-import { useEffect } from "./node_modules/react";
+import { useEffect } from "react";
 
 export const scrollTo = ({ x = 0, y = 0, id, option = "auto" }) => {
   if (

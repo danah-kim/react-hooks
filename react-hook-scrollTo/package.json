@@ -1,6 +1,6 @@
 {
   "name": "@danah/react-hook-scrollto",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "React Hook to makes scrolling the document to the specified coordinates easy.",
   "main": "index.js",
   "peerDependencies": {
@@ -25,5 +25,5 @@
   "bugs": {
     "url": "https://github.com/sweetmilkys/react-hooks/issues"
   },
-  "homepage": "https://github.com/sweetmilkys/react-hooks#readme"
+  "homepage": "https://github.com/sweetmilkys/react-hooks/tree/master/react-hook-scrollTo#readme"
 }
