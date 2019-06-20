@@ -1,10 +1,4 @@
-import React, { useEffect } from "react";
-import styled from "styled-components";
-
-const Map = styled.div`
-  width: 100%;
-  height: 100%;
-`;
+import React, { useEffect, useRef } from "react";
 
 export const daumMap = ({ apiKey, name = " ", lng, lat }) => {
   if (
@@ -18,10 +12,11 @@ export const daumMap = ({ apiKey, name = " ", lng, lat }) => {
     return;
   }
 
+  const element = useRef();
+
   useEffect(() => {
     let script = document.createElement("script");
 
-    script.id = "kakao-sdk";
     script.type = "text/javascript";
     script.src = `https://dapi.kakao.com/v2/maps/sdk.js?appKey=${apiKey}&libraries=services,clusterer,drawing&autoload=false`;
 
@@ -29,43 +24,44 @@ export const daumMap = ({ apiKey, name = " ", lng, lat }) => {
 
     script.onload = () => {
       const daum = window.daum;
-      daum.maps.load(function() {
-        /* 지도 생성 */
-        const map = new daum.maps.Map(document.getElementById("kakao-map"), {
-          center: new daum.maps.LatLng(lng, lat),
-          level: 3
+
+      if (element.current) {
+        const { current } = element;
+
+        daum.maps.load(function() {
+          /* 지도 생성 */
+          const map = new daum.maps.Map(current, {
+            center: new daum.maps.LatLng(lng, lat),
+            level: 3
+          });
+
+          /* 마커 생성 */
+          const marker = new daum.maps.Marker({
+            position: new daum.maps.LatLng(lng, lat)
+          });
+
+          marker.setMap(map);
+
+          /* 일반 지도와 스카이뷰로 지도 타입을 전환할 수 있는 지도타입 컨트롤 생성 */
+          const mapTypeControl = new daum.maps.MapTypeControl();
+          map.addControl(mapTypeControl, daum.maps.ControlPosition.TOPRIGHT);
+
+          /* 지도 확대 축소를 제어할 수 있는 줌 컨트롤 생성 */
+          const zoomControl = new daum.maps.ZoomControl();
+          map.addControl(zoomControl, daum.maps.ControlPosition.RIGHT);
+
+          /* 새탭에서 길찾기할 수 있는 클릭 이벤트 등록 */
+          daum.maps.event.addListener(marker, "click", function() {
+            window.open(`http://map.daum.net/link/to/${name},${lng},${lat}`);
+          });
         });
-
-        /* 마커 생성 */
-        const marker = new daum.maps.Marker({
-          position: new daum.maps.LatLng(lng, lat)
-        });
-
-        marker.setMap(map);
-
-        /* 일반 지도와 스카이뷰로 지도 타입을 전환할 수 있는 지도타입 컨트롤 생성 */
-        const mapTypeControl = new daum.maps.MapTypeControl();
-        map.addControl(mapTypeControl, daum.maps.ControlPosition.TOPRIGHT);
-
-        /* 지도 확대 축소를 제어할 수 있는 줌 컨트롤 생성 */
-        const zoomControl = new daum.maps.ZoomControl();
-        map.addControl(zoomControl, daum.maps.ControlPosition.RIGHT);
-
-        /* 새탭에서 길찾기할 수 있는 클릭 이벤트 등록 */
-        daum.maps.event.addListener(marker, "click", function() {
-          window.open(`http://map.daum.net/link/to/${name},${lng},${lat}`);
-        });
-      });
+      }
     };
-
-    let kakaoMapRoot = document.getElementById("kakao-map");
-
-    if (!kakaoMapRoot) {
-      kakaoMapRoot = document.createElement("div");
-      kakaoMapRoot.id = "kakao-map";
-      document.body.appendChild(kakaoMapRoot);
-    }
   }, []);
 
-  return <Map id="kakao-map" />;
+  return {
+    id: "daum-map",
+    ref: element,
+    style: { width: "100%", height: "100%" }
+  };
 };
