@@ -1,6 +1,6 @@
 {
   "name": "@danah/react-hook-daum-map",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "React Hook to makes funtional react for daum map easy.",
   "main": "index.js",
   "peerDependencies": {

@@ -57,7 +57,7 @@ export const daumMap = ({ apiKey, name = " ", lng, lat }) => {
         });
       }
     };
-  }, []);
+  }, [name, lng, lat]);
 
   return {
     id: "daum-map",
