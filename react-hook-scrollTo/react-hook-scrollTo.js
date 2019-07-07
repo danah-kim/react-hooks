@@ -1,11 +1,12 @@
 import { useEffect } from "react";
 
-export const scrollTo = ({ x = 0, y = 0, id, option = "auto" }) => {
+export const scrollTo = ({ x = 0, y = 0, id, option = false }) => {
   if (
     typeof x !== "number" ||
     typeof y !== "number" ||
-    option !== ("auto" || "smooth")
+    typeof option !== "boolean"
   ) {
+    console.log("Check Your Argument value");
     return;
   }
 
@@ -13,6 +14,7 @@ export const scrollTo = ({ x = 0, y = 0, id, option = "auto" }) => {
     const element = document.getElementById(id);
 
     if (typeof id !== "undefined" && !element) {
+      console.log("Check Your Element ID");
       return;
     }
 
