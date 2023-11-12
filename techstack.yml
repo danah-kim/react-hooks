@@ -1,0 +1,30 @@
+repo_name: danah-kim/react-hooks
+report_id: 46682df66028e5c160297cd7e928074c
+repo_type: Public
+timestamp: '2023-11-12T11:58:07+00:00'
+requested_by: danah-kim
+provider: github
+branch: master
+detected_tools_count: 2
+tools:
+- name: JavaScript
+  description: Lightweight, interpreted, object-oriented language with first-class
+    functions
+  website_url: https://developer.mozilla.org/en-US/docs/Web/JavaScript
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/1209/javascript.jpeg
+  detection_source: react-hook-daumMap/react-hook-daumMap.js
+  last_updated_by: kimdanah
+  last_updated_on: 2019-06-16 03:04:56.000000000 Z
+- name: Git
+  description: Fast, scalable, distributed revision control system
+  website_url: http://git-scm.com/
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Version Control System
+  image_url: https://img.stackshare.io/service/1046/git.png
+  detection_source: Repo Metadata
