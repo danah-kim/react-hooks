@@ -1,7 +1,8 @@
 repo_name: danah-kim/react-hooks
 report_id: 46682df66028e5c160297cd7e928074c
+version: 0.1
 repo_type: Public
-timestamp: '2023-11-12T11:58:07+00:00'
+timestamp: '2024-01-05T08:48:44+00:00'
 requested_by: danah-kim
 provider: github
 branch: master
@@ -16,6 +17,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/1209/javascript.jpeg
+  detection_source_url: https://github.com/danah-kim/react-hooks/blob/master/react-hook-daumMap/react-hook-daumMap.js
   detection_source: react-hook-daumMap/react-hook-daumMap.js
   last_updated_by: kimdanah
   last_updated_on: 2019-06-16 03:04:56.000000000 Z
@@ -27,4 +29,5 @@ tools:
   category: Build, Test, Deploy
   sub_category: Version Control System
   image_url: https://img.stackshare.io/service/1046/git.png
+  detection_source_url: https://github.com/danah-kim/react-hooks
   detection_source: Repo Metadata
